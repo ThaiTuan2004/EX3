@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 val filteredList = if (newText.isNullOrEmpty() || newText.length < 2) {
                     dataList
                 } else {
-                    dataList.filter { it.name.contains(newText, ignoreCase = true) }
+                    dataList.filter { it.name.contains(newText, ignoreCase = true) || it.mssv.contains(newText, ignoreCase = true) }
                 }
                 adapter.updateList(filteredList)
                 return true
